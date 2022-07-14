@@ -49,5 +49,5 @@ for tsv_og in tsv_og_list:
         tmp = tsv_og + "\t" + cafe5_og_and_pval[tsv_og] + "\t" + cafe5_og_and_num[tsv_og].rstrip() + "\t" + "y"
         print(tmp)
     else:
-        tmp = "" + "\t" + "" + "\t" + "" + "\t" + "n"
+        tmp = "-" + "\t" + "-" + "\t" + "-" + "\t" + "n"
         print(tmp)
