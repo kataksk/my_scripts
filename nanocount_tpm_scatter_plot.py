@@ -39,8 +39,8 @@ df2 = pd.read_table(input_2, usecols=[0, 3])
 df1 = df1.rename(columns={'tpm': input_1_label})
 df2 = df2.rename(columns={'tpm': input_2_label})
 
-input_1_label_alt = input_1_label + "_alt"
-input_2_label_alt = input_2_label + "_alt"
+input_1_label_alt = input_1_label + " log10(TPM+1)"
+input_2_label_alt = input_2_label + " log10(TPM+1)"
 
 df1[input_1_label_alt] = df1.apply(log10_tpm, axis=1)
 df2[input_2_label_alt] = df2.apply(log10_tpm, axis=1)
