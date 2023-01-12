@@ -53,14 +53,10 @@ clade_results = pd.read_table(
 
 clade_results = clade_results.set_index("Taxon")
 
-# print(clade_results)
-
 branch_probabilities = pd.read_table(
     branch_probabilities,
     index_col = 0
     )
-
-# print(branch_probabilities)
 
 clade_results["Total Significant Changes"] = ''
 
@@ -68,17 +64,10 @@ for taxon_name in clade_results.index:
     # print(taxon_name)
     clade_results["Total Significant Changes"][taxon_name] = count_significant_og(taxon_name, branch_probabilities, pval)
 
-# print(clade_results)
-
 change = pd.read_table(
     change,
     index_col = 0
     )
-
-# print(change)
-
-# print(len(clade_results.index))
-# 22
 
 clade_results["Signicant Expansions"] = ''
 clade_results["Signicant Contractions"] = ''
@@ -89,9 +78,5 @@ for taxon_name in clade_results.index:
     contraction_num = count_changes(change.loc[sig_og_list, : ][taxon_name].to_list())[1]
     clade_results["Siginicant Expansions"][taxon_name] = expansion_num
     clade_results["Siginicant Contractions"][taxon_name] = contraction_num
-
-# print(clade_results)
-
-# output_significant_og_list(taxon_name, branch_probabilities, pval)
 
 clade_results.to_csv('./out.csv')
