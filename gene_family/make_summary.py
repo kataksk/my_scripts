@@ -80,8 +80,8 @@ change = pd.read_table(
 # print(len(clade_results.index))
 # 22
 
-clade_results["Siginicant Expansions"] = ''
-clade_results["Siginicant Contractions"] = ''
+clade_results["Signicant Expansions"] = ''
+clade_results["Signicant Contractions"] = ''
 
 for taxon_name in clade_results.index:
     sig_og_list = output_significant_og_list(taxon_name, branch_probabilities, pval)
