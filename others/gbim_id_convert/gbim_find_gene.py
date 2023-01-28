@@ -1,8 +1,9 @@
 import sys
 import csv
 
-gff_in = "./data/Gbi_Genes.gff"
 id_in = sys.argv[1]
+# gff_in = "./data/Gbi_Genes.gff"
+gff_in = sys.argv[2]
 
 id_in_list = list()
 
